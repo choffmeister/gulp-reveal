@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{title}}</title>
+    <script src="vendor/d3/d3.js"></script>
+    <script src="vendor/dimple/dimple.js"></script>
+    <script src="vendor/revealjs/lib/js/head.min.js"></script>
+    <script src="vendor/revealjs/js/reveal.js"></script>
+    <link rel="stylesheet" href="vendor/revealjs/css/reveal.css">
+    <link rel="stylesheet" href="vendor/revealjs/css/theme/white.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>{{title}}</h1>
+        </section>
+        {{#sections}}
+          {{{rendered}}}
+        {{/sections}}
+      </div>
+    </div>
+
+    <script>
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: false,
+        // Display a presentation progress bar
+        progress: true,
+        // Display a subtle timer bar (time is in minutes)
+        timeRemaining: 15,
+        // Push each slide change to the browser history
+        history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
+        // Vertical centering of slides
+        center: true,
+        // Loop the presentation
+        loop: false,
+        // Change the presentation direction to be RTL
+        rtl: false,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+        // Apply a 3D roll to links on hover
+        rollingLinks: false,
+        // Transition style
+        // default/cube/page/concave/zoom/linear/fade/none
+        transition: 'linear',
+        dependencies: [
+          // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+          { src: 'vendor/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          // Remotreveal/e control your reveal.js presentation using a touch device
+          // { src: 'remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+  </body>
+</html>
